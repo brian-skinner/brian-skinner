@@ -17,8 +17,7 @@
     <script>
       var camera, scene, renderer;
       var mesh;
-      init();
-      animate();
+	    window.onload(init);
       function init() {
         var aspect = window.innerWidth / window.innerHeight;
         camera = new THREE.PerspectiveCamera(60, aspect, 1, 1000);
@@ -32,9 +31,10 @@
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
+        animate();
       }
       function animate() {
-        requestAnimationFrame( animate );
+        requestAnimationFrame(animate);
         mesh.rotation.x += 0.001;
         mesh.rotation.y += 0.0;
         renderer.render(scene, camera);
