@@ -17,7 +17,10 @@
     <script>
       var camera, scene, renderer;
       var mesh;
-	    window.onload(init);
+      window.onload = function() {
+        init();
+        animate();
+      };
       function init() {
         var aspect = window.innerWidth / window.innerHeight;
         camera = new THREE.PerspectiveCamera(60, aspect, 1, 1000);
@@ -31,7 +34,6 @@
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
-        animate();
       }
       function animate() {
         requestAnimationFrame(animate);
@@ -39,11 +41,11 @@
         mesh.rotation.y += 0.0;
         renderer.render(scene, camera);
       }
-		</script>
+    </script>
   </head>
   <body>
     <!-- TODO: add content -->
-    <h1>Hello World!!!</h1>
+    <h1>This time for sure!</h1>
 
   </body>
 </html>
